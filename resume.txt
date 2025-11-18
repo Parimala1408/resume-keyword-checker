@@ -1,0 +1,13 @@
+Parimala Devi Kandula
+Sr. Power Platform Consultant & D365 SCM Functional Consultant
+
+Skills:
+- Power Platform: Power Apps, Power Automate, Power BI, Dataverse
+- Microsoft 365: SharePoint Online, Teams
+- Dynamics 365: Finance & Supply Chain Management
+- Azure DevOps, GitHub, ALM, Governance
+
+Experience:
+- Designed and implemented Power Apps and Power Automate solutions
+- Worked on Dynamics 365 Finance & Supply Chain modules
+- Built automation and dashboards for credit approval and patient data

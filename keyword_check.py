@@ -1,24 +1,16 @@
-# keyword_check.py
-# Simple script to check if required keywords exist in resume.txt
-
 import sys
 from pathlib import Path
 
 RESUME_FILE = Path("resume.txt")
+KEYWORDS_FILE = Path("keywords.txt")
 
-# You can change this list anytime
-REQUIRED_KEYWORDS = [
-    "Power Platform",
-    "Power Apps",
-    "Power Automate",
-    "Power BI",
-    "Dataverse",
-    "Dynamics 365",
-    "SharePoint",
-    "Microsoft 365",
-    "Azure DevOps",
-    "GitHub"
-]
+
+def load_keywords():
+    if not KEYWORDS_FILE.exists():
+        print("❌ keywords.txt not found.")
+        sys.exit(1)
+    lines = KEYWORDS_FILE.read_text(encoding="utf-8").splitlines()
+    return [l.strip() for l in lines if l.strip()]
 
 
 def read_resume():
@@ -28,8 +20,8 @@ def read_resume():
     return RESUME_FILE.read_text(encoding="utf-8")
 
 
-def check_keywords(text: str):
-    missing = [kw for kw in REQUIRED_KEYWORDS if kw.lower() not in text.lower()]
+def check_keywords(text: str, required_keywords):
+    missing = [kw for kw in required_keywords if kw.lower() not in text.lower()]
     if missing:
         print("❌ Missing important keywords:")
         for kw in missing:
@@ -41,4 +33,5 @@ def check_keywords(text: str):
 
 if __name__ == "__main__":
     resume_text = read_resume()
-    check_keywords(resume_text)
+    required = load_keywords()
+    check_keywords(resume_text, required)

@@ -1,0 +1,10 @@
+Power Platform
+Power Apps
+Power Automate
+Power BI
+Dataverse
+Dynamics 365
+SharePoint
+Microsoft 365
+Azure DevOps
+GitHub
